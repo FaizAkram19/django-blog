@@ -1,22 +1,33 @@
-gitignore
-CopyEdit
-# Virtual Environment
+# --- Virtual Environment ---
 myvenv/
+env/
+venv/
+ENV/
 
-# Python Bytecode
+# --- Python / Django ---
 __pycache__/
 *.pyc
-
-# Django DB
+*.pyo
+*.pyd
 db.sqlite3
+db.sqlite3-journal
+local_settings.py
+staticfiles/
+media/
 
-# Editor Files
+# --- Environment Variables ---
+.env
+.env.local
+
+# --- Editor Files ---
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Environment Variables
-.env
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
 
-# Django Static Files (optional)
-staticfiles/
-
+# --- Logs ---
+*.log
