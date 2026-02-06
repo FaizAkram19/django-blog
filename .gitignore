@@ -1,0 +1,22 @@
+gitignore
+CopyEdit
+# Virtual Environment
+myvenv/
+
+# Python Bytecode
+__pycache__/
+*.pyc
+
+# Django DB
+db.sqlite3
+
+# Editor Files
+.vscode/
+.idea/
+
+# Environment Variables
+.env
+
+# Django Static Files (optional)
+staticfiles/
+
