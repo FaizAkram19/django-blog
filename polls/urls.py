@@ -1,7 +1,10 @@
 from django.urls import path
 from . import views
 
-
+app_name="polls"
+# we gave an app name because there can be multiple app which can have
+# identical view names so in order to make sure that the {% url %} works
+# we define each app_name so that we can write the view belongs to whih app
 urlpatterns = [
     #/polls/
     path("", views.index, name="index"),
