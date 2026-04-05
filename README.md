@@ -1,154 +1,77 @@
+# Django Polls Application
 
-# Django Blog Application (Ongoing)
-## Overview
+This is a basic polling application built following the official Django documentation tutorial. It allows users to view open polls, vote on choices, and see real-time results. It also includes a fully functional administrative interface for managing questions and choices.
 
-A full-stack blogging platform built using Django, focused on content management, user authentication, and role-based access control.
+---
 
-This project is being developed to understand how real-world content-driven web applications are designed and maintained, similar to professional CMS platforms.
+## 🚀 Features
 
-## Objectives
+* Public Interface: Users can browse a list of recent polls, view details for a specific question, and cast votes.
+* Results View: Dynamic updates of vote counts for each choice after a vote is cast.
+* Admin Dashboard: A pre-configured administrative site to create, update, and delete questions and choices.
+* Automated Testing: Includes basic tests for model logic (e.g., checking if questions were published recently).
+* Custom Styling: Integrated static files for a clean, documentation-inspired UI.
 
-- Understand content management system (CMS) architecture
+---
 
-- Implement user authentication and authorization
+## 🛠️ Technology Stack
 
-- Design relational database models for posts and comments
+* Framework: Django
+* Language: Python 3.x
+* Database: SQLite (Default)
+* Frontend: Django Template Language (HTML/CSS)
 
-- Learn Django’s ORM, views, templates, and admin customization
+---
 
-- Practice clean backend code and scalable project structure
+## ⚙️ Installation & Setup
 
-## Project Status
+Follow these steps to get the project running locally:
 
-Status: 🛠️ Ongoing
-Actively being developed and improved.
+### 1. Clone the Repository
+git clone <repository-url>
+cd django-polls
 
-## Planned Features
-### User Features
-
-- User registration and login
-
-- Create, edit, and delete blog posts
-
-- Comment on posts
-
-- User-specific dashboards
-
-### Content Management
-
-- Rich text / Markdown support
-
-- Draft and publish workflow
-
-- Post categorization and tags
-
-- Search functionality
-
-### Permissions & Roles
-
-- Role-based access (Admin / Author / Reader)
-
-- Only authors can edit their own posts
-
-- Admin moderation for comments
-
-### Admin Panel
-
-- Manage posts, users, and comments
-
-- Content moderation using Django Admin
-
-## Tech Stack
-### Backend
-
-- Python
-
-- Django
-
-### Frontend
-
-- HTML
-
-- CSS
-
-- JavaScript (basic)
-
-### Database
-
-- SQLite (development)
-
-- PostgreSQL (planned)
-
-### Tools
-
-- Git & GitHub
-
-- VS Code
-
-## Project Structure (Planned)
-django-blog/
-│
-├── blog/             # Blog app (posts, comments)
-├── accounts/         # User authentication & profiles
-├── templates/        # HTML templates
-├── static/           # CSS & JS files
-├── db.sqlite3
-└── manage.py
-
-## Installation & Setup (Local)
-1️⃣ Clone the Repository
-git clone https://github.com/FaizAkram19/django-blog.git
-cd django-blog
-
-2️⃣ Create Virtual Environment
+### 2. Create a Virtual Environment
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
-3️⃣ Install Dependencies
+### 3. Install Dependencies
 pip install django
 
-4️⃣ Run Migrations
+### 4. Database Migrations
+Apply the initial schema to your SQLite database:
 python manage.py migrate
 
-5️⃣ Start Development Server
+### 5. Create an Admin User
+To access the /admin panel, create a superuser:
+python manage.py createsuperuser
+
+### 6. Run the Server
 python manage.py runserver
+Visit http://127.0.0.1:8000/polls/ to view the app or http://127.0.0.1:8000/admin/ to manage it.
 
+---
 
-Open browser and visit:
+## 📂 Project Structure
 
-http://127.0.0.1:8000/
+A quick overview of the key files:
 
-## Learning Outcomes
+* polls/models.py: Defines Question and Choice schemas.
+* polls/views.py: Contains the logic for the index, detail, and results pages.
+* polls/urls.py: Maps URL patterns to the specific views.
+* polls/templates/: Contains the HTML files using Django Template Language.
+* mysite/settings.py: The main configuration file for the Django project.
 
-- Building content-driven web applications
+---
 
-- Implementing authentication & authorization
+## 🧪 Running Tests
 
-- Designing scalable Django project architecture
+To ensure the logic is working correctly (especially the was_published_recently() method), run:
+python manage.py test polls
 
-- Using Django ORM for relational data
+---
 
-- Managing user roles and permissions
-
-## Future Enhancements
-
-- Django REST Framework API
-
-- Rich text editor integration
-
-- Like / bookmark system
-
-- Deployment on cloud platforms
-
-- Docker support
-
-## Contributing
-
-This is a personal learning project.
-Suggestions and feedback are welcome.
-
-## Author
-
-Faiz Akram
-B.Tech Computer Science Student
-GitHub: https://github.com/FaizAkram19
+> Note: This project was developed as part of Phase 1 (Foundations) of a Django learning roadmap to understand the core MVT (Model-View-Template) architecture, including URL routing, database relationships, and form handling.
